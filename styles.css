@@ -741,3 +741,6 @@ img, iframe { max-width: 100%; }
   .search-form .field { border-left: 1px solid rgba(111, 216, 230, 0.22); border-top: 0; padding: 8px 16px; }
   .search-form .field:first-child { border-left: 0; }
 }
+
+/* A transformed header would trap the fixed tab bar, so no header animation on phones and tablets */
+@media (max-width: 1179px) { .site-header { animation: none; } }
