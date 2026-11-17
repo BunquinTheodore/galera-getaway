@@ -22,9 +22,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>try{var n=performance.getEntriesByType("navigation")[0];if(sessionStorage.getItem("gg")&&n&&n.type!=="reload")document.documentElement.classList.add("no-splash");sessionStorage.setItem("gg","1")}catch(e){}</script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="splash" aria-hidden="true">
+    <div class="splash-inner">
+      <p class="splash-brand">Galera <span>Getaway</span></p>
+      <span class="splash-line"></span>
+      <p class="splash-tag">Explore the Pearl of Mindoro</p>
+    </div>
+  </div>
   <div class="progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap">
@@ -75,7 +83,7 @@
               <span class="tag">Budget, hostel</span>
               <h3>Bahay Isla Inn and Hostel</h3>
               <p class="price">PHP 500 <small>dorm bed</small></p>
-              <p>In town. Dorm beds from about PHP 500, private rooms PHP 1,200 to 1,800.</p>
+              <p>In town. Private rooms from PHP 1,200.</p>
               <a class="btn ghost" href="contact.html">Book Directly</a>
             </div>
           </article>
@@ -85,7 +93,7 @@
               <span class="tag">Budget, guesthouse</span>
               <h3>Manalo's Guesthouse</h3>
               <p class="price">PHP 1,000 <small>from, per night</small></p>
-              <p>A budget guesthouse listed for the White Beach area.</p>
+              <p>Budget guesthouse near White Beach.</p>
               <a class="btn ghost" href="contact.html">Book Directly</a>
             </div>
           </article>
@@ -95,17 +103,57 @@
               <span class="tag">Budget, bungalow</span>
               <h3>White Beach bungalows</h3>
               <p class="price">PHP 500 to 1,500 <small>per night</small></p>
-              <p>Simple beachfront bungalows. Cheaper on weekdays.</p>
+              <p>Simple beachfront bungalows.</p>
+              <a class="btn ghost" href="contact.html">Book Directly</a>
+            </div>
+          </article>
+          <article class="card stay" data-tier="mid">
+            <img src="images/beach.jpg" alt="A quiet beach near Puerto Galera" loading="lazy" decoding="async">
+            <div class="card-body">
+              <span class="tag">Mid range, beach and dive resort</span>
+              <h3>Badladz Beach and Dive Resort</h3>
+              <p class="price">PHP 2,690 <small>from, per night</small></p>
+              <p>Pools, spa and an on site dive school.</p>
+              <a class="btn ghost" href="contact.html">Book Directly</a>
+            </div>
+          </article>
+          <article class="card stay" data-tier="mid">
+            <img src="images/white-beach-sunset.jpg" alt="Sunset at White Beach" loading="lazy" decoding="async">
+            <div class="card-body">
+              <span class="tag">Mid range, hotel</span>
+              <h3>Sea Jewel Hotel</h3>
+              <p class="price">PHP 1,600 <small>from, per night</small></p>
+              <p>50 meters from White Beach, with a pool.</p>
               <a class="btn ghost" href="contact.html">Book Directly</a>
             </div>
           </article>
           <article class="card stay" data-tier="mid">
             <img src="images/muelle.jpg" alt="Muelle Pier in town" loading="lazy" decoding="async">
             <div class="card-body">
-              <span class="tag">Mid range, dive resort</span>
-              <h3>Badladz Adventure Resort</h3>
-              <p class="price">PHP 990 <small>from, per night</small></p>
-              <p>At Muelle Pier. Air conditioning, hot water and an on site dive shop.</p>
+              <span class="tag">Mid range, hotel</span>
+              <h3>Grand Mangyan Hotel</h3>
+              <p class="price">Rates on request</p>
+              <p>Confirm rooms and rates before booking.</p>
+              <a class="btn ghost" href="contact.html">Book Directly</a>
+            </div>
+          </article>
+          <article class="card stay" data-tier="resort">
+            <img src="images/varadero.jpg" alt="Varadero Bay, Puerto Galera" loading="lazy" decoding="async">
+            <div class="card-body">
+              <span class="tag">Resort, spa</span>
+              <h3>Infinity Resort and Spa</h3>
+              <p class="price">Rates on request</p>
+              <p>Confirm rooms and rates before booking.</p>
+              <a class="btn ghost" href="contact.html">Book Directly</a>
+            </div>
+          </article>
+          <article class="card stay" data-tier="resort">
+            <img src="images/sabang.jpg" alt="Sabang shoreline with resorts and boats" loading="lazy" decoding="async">
+            <div class="card-body">
+              <span class="tag">Resort, hillside</span>
+              <h3>Oriental Sabang Hill Resort</h3>
+              <p class="price">Rates on request</p>
+              <p>Hillside resort in the Sabang area.</p>
               <a class="btn ghost" href="contact.html">Book Directly</a>
             </div>
           </article>
@@ -125,12 +173,11 @@
               <span class="tag">Resort, beachfront</span>
               <h3>Aninuan Beach Resort</h3>
               <p class="price">USD 100 <small>approx., per night</small></p>
-              <p>A resort on the quieter beach west of White Beach.</p>
+              <p>On the quieter beach west of White Beach.</p>
               <a class="btn ghost" href="contact.html">Book Directly</a>
             </div>
           </article>
         </div>
-        <p class="note">Photos show the general area, not the property itself. Rates come from the Wikivoyage guide and are approximate. Guest ratings are not shown because we do not have verified review data.</p>
       </div>
     </section>
 
@@ -161,6 +208,7 @@
             <div><dt>Coast Guard, Muelle Pier</dt><dd><a href="tel:+639177243682">0917 724 3682</a></dd></div>
             <div><dt>Police Station</dt><dd><a href="tel:+63432873075">043 287 3075</a></dd></div>
           </dl>
+          <p class="footer-more"><a href="hotlines.html">All hotline numbers</a></p>
         </div>
       </div>
       <div class="footer-base">

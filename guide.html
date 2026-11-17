@@ -22,9 +22,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>try{var n=performance.getEntriesByType("navigation")[0];if(sessionStorage.getItem("gg")&&n&&n.type!=="reload")document.documentElement.classList.add("no-splash");sessionStorage.setItem("gg","1")}catch(e){}</script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="splash" aria-hidden="true">
+    <div class="splash-inner">
+      <p class="splash-brand">Galera <span>Getaway</span></p>
+      <span class="splash-line"></span>
+      <p class="splash-tag">Explore the Pearl of Mindoro</p>
+    </div>
+  </div>
   <div class="progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap">
@@ -78,7 +86,7 @@
             <colgroup><col style="width:32%"><col style="width:23%"><col style="width:24%"><col style="width:21%"></colgroup>
             <thead><tr><th>Leg</th><th>Option</th><th>Approximate fare</th><th>Travel time</th></tr></thead>
             <tbody>
-              <tr><td class="leg">Manila to Batangas Pier</td><td>Bus (JAM Transit, DLTB)</td><td>About PHP 200</td><td>2 to 3 hours</td></tr>
+              <tr><td class="leg">Manila to Batangas Pier</td><td>Bus (JAM Transit, DLTB)</td><td>PHP 250</td><td>2 to 3 hours</td></tr>
               <tr><td class="leg" rowspan="2">Batangas to Balatero</td><td>Fast craft</td><td>About PHP 750</td><td>About 1 hour</td></tr>
               <tr><td>RoRo</td><td>About PHP 544</td><td>Over 2 hours</td></tr>
               <tr><td class="leg">Balatero to White Beach</td><td>Tricycle</td><td>About PHP 200 per trip</td><td>10 to 15 minutes</td></tr>
@@ -87,6 +95,20 @@
           </table>
         </div>
         <p class="note small">Departure times change often and are not listed here. Check the ferry operator for the current schedule. Fares are approximate, from the Wikivoyage Puerto Galera guide.</p>
+      </div>
+    </section>
+
+    <section class="section deep fx-section" id="currency">
+      <div class="wrap">
+        <div class="form-card converter">
+          <div class="fx-side">
+            <p class="eyebrow">CURRENCY CONVERTER</p>
+            <h2>Pesos to your money</h2>
+            <div class="field"><label for="fx-amount">Amount in PHP</label><input id="fx-amount" type="number" min="0" step="any" value="1000" inputmode="decimal"></div>
+            <p class="note small" id="fx-note">Loading rates.</p>
+          </div>
+          <ul class="fx-list" id="fx-list" aria-live="polite"></ul>
+        </div>
       </div>
     </section>
 
@@ -125,6 +147,7 @@
             <div><dt>Coast Guard, Muelle Pier</dt><dd><a href="tel:+639177243682">0917 724 3682</a></dd></div>
             <div><dt>Police Station</dt><dd><a href="tel:+63432873075">043 287 3075</a></dd></div>
           </dl>
+          <p class="footer-more"><a href="hotlines.html">All hotline numbers</a></p>
         </div>
       </div>
       <div class="footer-base">
@@ -133,5 +156,48 @@
       </div>
     </div>
   </footer>
+  <script>
+  (function () {
+    var CURRENCIES = [["USD", "US dollar"], ["EUR", "Euro"], ["GBP", "British pound"], ["JPY", "Japanese yen"], ["KRW", "South Korean won"], ["CNY", "Chinese yuan"], ["AUD", "Australian dollar"], ["SGD", "Singapore dollar"]];
+    var ESTIMATE = { USD: 0.017, EUR: 0.0148, GBP: 0.0128, JPY: 2.6, KRW: 24, CNY: 0.122, AUD: 0.026, SGD: 0.0226 };
+    var rates = ESTIMATE;
+    var input = document.getElementById("fx-amount");
+    var list = document.getElementById("fx-list");
+    var note = document.getElementById("fx-note");
+    function render() {
+      var amount = parseFloat(input.value);
+      if (!isFinite(amount) || amount < 0) amount = 0;
+      list.innerHTML = "";
+      CURRENCIES.forEach(function (c) {
+        var value = amount * rates[c[0]];
+        var digits = value >= 100 ? 0 : 2;
+        var li = document.createElement("li");
+        var name = document.createElement("span");
+        name.textContent = c[1];
+        var code = document.createElement("b");
+        code.textContent = c[0];
+        var num = document.createElement("strong");
+        num.textContent = value.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+        li.appendChild(code); li.appendChild(num); li.appendChild(name); list.appendChild(li);
+      });
+    }
+    input.addEventListener("input", render);
+    render();
+    note.textContent = "Rough estimates shown while live rates load.";
+    var timer = new AbortController();
+    setTimeout(function () { timer.abort(); }, 6000);
+    fetch("https://open.er-api.com/v6/latest/PHP", { signal: timer.signal })
+      .then(function (r) { if (!r.ok) throw new Error("bad response"); return r.json(); })
+      .then(function (d) {
+        var next = {};
+        CURRENCIES.forEach(function (c) { if (!d.rates || typeof d.rates[c[0]] !== "number") throw new Error("missing rate"); next[c[0]] = d.rates[c[0]]; });
+        rates = next; render();
+        note.textContent = "Live rates, updated " + (d.time_last_update_utc || "recently").replace(/ \+0000$/, "") + ". Banks and money changers add their own margin.";
+      })
+      .catch(function () {
+        note.textContent = "Live rates are not available right now. These are rough estimates. Check a bank or money changer for today's rate.";
+      });
+  })();
+  </script>
 </body>
 </html>
