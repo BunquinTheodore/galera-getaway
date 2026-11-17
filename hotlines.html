@@ -10,22 +10,24 @@
   <meta property="og:title" content="Hotline Numbers | Galera Getaway">
   <meta property="og:description" content="Emergency and community hotline numbers for Puerto Galera.">
   <meta property="og:url" content="https://galera-getaway.vercel.app/hotlines.html">
-  <meta property="og:image" content="https://galera-getaway.vercel.app/og-image.jpg">
+  <meta property="og:image" content="https://galera-getaway.vercel.app/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Explore the Pearl of Mindoro: White Beach in Puerto Galera with the Galera Getaway name">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hotline Numbers | Galera Getaway">
   <meta name="twitter:description" content="Emergency and community hotline numbers for Puerto Galera.">
-  <meta name="twitter:image" content="https://galera-getaway.vercel.app/og-image.jpg">
+  <meta name="twitter:image" content="https://galera-getaway.vercel.app/images/og-image.jpg">
   <meta name="theme-color" content="#041e3a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <!-- Splash screen: show it on the first visit and on refresh only, skip it when moving between pages -->
   <script>try{var n=performance.getEntriesByType("navigation")[0];if(sessionStorage.getItem("gg")&&n&&n.type!=="reload")document.documentElement.classList.add("no-splash");sessionStorage.setItem("gg","1")}catch(e){}</script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Splash screen markup (animated and hidden with CSS only) -->
   <div class="splash" aria-hidden="true">
     <div class="splash-inner">
       <p class="splash-brand">Galera <span>Getaway</span></p>
@@ -33,7 +35,9 @@
       <p class="splash-tag">Explore the Pearl of Mindoro</p>
     </div>
   </div>
+  <!-- Reading progress bar at the top of the page -->
   <div class="progress" aria-hidden="true"></div>
+  <!-- Header: desktop top menu. On phones the same list becomes a floating glass tab bar at the bottom -->
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Galera <span>Getaway</span></a>
@@ -50,7 +54,9 @@
     </div>
   </header>
 
+  <!-- Main content -->
   <main>
+    <!-- Section: Hero banner -->
     <section class="hero short">
       <img class="hero-bg" fetchpriority="high" decoding="async" src="images/balatero.jpg" alt="Balatero Port in Puerto Galera">
       <div class="wrap">
@@ -59,6 +65,7 @@
       </div>
     </section>
 
+    <!-- Section: Hotline directory. Numbers are tel: links so a phone dials them on tap -->
     <section class="section" id="hotlines">
       <div class="wrap">
         <div class="section-head">
@@ -67,22 +74,27 @@
           <p class="lead wide">In case of emergency, stay calm and call. Tap a number to call it on your phone. Confirm numbers before relying on them.</p>
         </div>
         <div class="hl-grid">
+          <!-- Hotline group -->
           <section class="hl-group hl-alert">
             <header><h3>MDRRMO Emergency</h3><span class="hl-badge">24/7 Response</span></header>
             <ul><li><span class="hl-name">MDRRMO Hotline</span><span class="hl-nums"><a href="tel:+639171469446">0917 146 9446</a><a href="tel:+639399380157">0939 938 0157</a></span></li></ul>
           </section>
+          <!-- Hotline group -->
           <section class="hl-group hl-alert">
             <header><h3>Puerto Galera Hospital</h3><span class="hl-badge">24/7 Medical</span></header>
             <ul><li><span class="hl-name">Hospital Emergency</span><span class="hl-nums"><a href="tel:+639618224912">0961 822 4912</a><a href="tel:+639354710701">0935 471 0701</a></span></li></ul>
           </section>
+          <!-- Hotline group -->
           <section class="hl-group">
             <header><h3>Safety and Security</h3></header>
             <ul><li><span class="hl-name">Municipal Police Station</span><span class="hl-nums"><a href="tel:+639173296806">0917 329 6806</a></span></li><li><span class="hl-name">Tourist Police Unit</span><span class="hl-nums"><a href="tel:+639064473313">0906 447 3313</a></span></li><li><span class="hl-name">Bureau of Fire Protection</span><span class="hl-nums"><a href="tel:+639156031461">0915 603 1461</a></span></li><li><span class="hl-name">Coast Guard Sub-Station</span><span class="hl-nums"><a href="tel:+639530678568">0953 067 8568</a></span></li><li><span class="hl-name">Maritime Police</span><span class="hl-nums"><a href="tel:+639683526678">0968 352 6678</a></span></li><li><span class="hl-name">Bantay Dagat</span><span class="hl-nums"><a href="tel:+639358286991">0935 828 6991</a></span></li></ul>
           </section>
+          <!-- Hotline group -->
           <section class="hl-group">
             <header><h3>Health, Utilities and Tourism</h3></header>
             <ul><li><span class="hl-name">Rural Health Unit</span><span class="hl-nums"><a href="tel:+639975035553">0997 503 5553</a></span></li><li><span class="hl-name">ORMECO Inc. Calapan</span><span class="hl-nums"><a href="tel:+639178940170">0917 894 0170</a></span></li><li><span class="hl-name">Waterworks System Office</span><span class="hl-nums"><a href="tel:+639977724576">0997 772 4576</a></span></li><li><span class="hl-name">Municipal Tourism Office</span><span class="hl-nums"><a href="tel:+639209889551">0920 988 9551</a></span></li></ul>
           </section>
+          <!-- Hotline group -->
           <section class="hl-group">
             <header><h3>Office of the Mayor</h3></header>
             <ul><li><span class="hl-name">Office of the Mayor</span><span class="hl-nums"><a href="tel:+639289287984">0928 928 7984</a></span></li></ul>
@@ -92,6 +104,7 @@
     </section>
   </main>
 
+  <!-- Footer: brand, emergency contacts, link to all hotline numbers, credits -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">

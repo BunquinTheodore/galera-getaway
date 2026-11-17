@@ -10,22 +10,24 @@
   <meta property="og:title" content="Home | Galera Getaway">
   <meta property="og:description" content="Plan a trip to Puerto Galera: places to visit, activities, hotels and a travel guide.">
   <meta property="og:url" content="https://galera-getaway.vercel.app/index.html">
-  <meta property="og:image" content="https://galera-getaway.vercel.app/og-image.jpg">
+  <meta property="og:image" content="https://galera-getaway.vercel.app/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Explore the Pearl of Mindoro: White Beach in Puerto Galera with the Galera Getaway name">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Home | Galera Getaway">
   <meta name="twitter:description" content="Plan a trip to Puerto Galera: places to visit, activities, hotels and a travel guide.">
-  <meta name="twitter:image" content="https://galera-getaway.vercel.app/og-image.jpg">
+  <meta name="twitter:image" content="https://galera-getaway.vercel.app/images/og-image.jpg">
   <meta name="theme-color" content="#041e3a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <!-- Splash screen: show it on the first visit and on refresh only, skip it when moving between pages -->
   <script>try{var n=performance.getEntriesByType("navigation")[0];if(sessionStorage.getItem("gg")&&n&&n.type!=="reload")document.documentElement.classList.add("no-splash");sessionStorage.setItem("gg","1")}catch(e){}</script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Splash screen markup (animated and hidden with CSS only) -->
   <div class="splash" aria-hidden="true">
     <div class="splash-inner">
       <p class="splash-brand">Galera <span>Getaway</span></p>
@@ -33,7 +35,9 @@
       <p class="splash-tag">Explore the Pearl of Mindoro</p>
     </div>
   </div>
+  <!-- Reading progress bar at the top of the page -->
   <div class="progress" aria-hidden="true"></div>
+  <!-- Header: desktop top menu. On phones the same list becomes a floating glass tab bar at the bottom -->
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Galera <span>Getaway</span></a>
@@ -50,7 +54,9 @@
     </div>
   </header>
 
+  <!-- Main content -->
   <main>
+    <!-- Section: Hero banner -->
     <section class="hero">
       <img class="hero-bg" fetchpriority="high" decoding="async" src="images/hero-white-beach.jpg" alt="White Beach in Puerto Galera seen from the sea">
       <div class="wrap">
@@ -75,6 +81,7 @@
       </form>
     </div>
 
+    <!-- Section: Featured destinations -->
     <section class="section">
       <div class="wrap">
         <div class="section-head">
@@ -114,6 +121,7 @@
       </div>
     </section>
 
+    <!-- Section: Film strip of three scenes -->
     <section class="film" aria-label="Scenes of Puerto Galera">
       <div class="film-pin">
         <div class="film-track">
@@ -134,6 +142,7 @@
       </div>
     </section>
 
+    <!-- Section: Quick facts -->
     <section class="section light">
       <div class="wrap">
         <div class="section-head">
@@ -148,6 +157,7 @@
       </div>
     </section>
 
+    <!-- Section: Plan your trip -->
     <section class="section deep">
       <div class="wrap">
         <div class="split">
@@ -163,6 +173,7 @@
     </section>
   </main>
 
+  <!-- Footer: brand, emergency contacts, link to all hotline numbers, credits -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
