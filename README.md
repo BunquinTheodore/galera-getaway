@@ -20,7 +20,7 @@ It is a plain static site: HTML pages and one stylesheet. No build step. Open `i
 ## Files
 
 - `styles.css` is the only stylesheet. Its header comment explains how it is layered.
-- `images/` holds every photo, including `og-image.jpg`, the picture shown in link previews. Credits are listed in `credits.html` and `credits.json`.
+- `images/` holds every photo, including `og-image.jpg`, the picture shown in link previews. Photo credits are listed in `credits.html`.
 
 ## How it works
 
