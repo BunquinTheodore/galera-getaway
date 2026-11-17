@@ -365,7 +365,7 @@ tr:last-child td { border-bottom: 0; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-950); border-top: 1px solid rgba(111, 216, 230, 0.2); padding: 56px 0 40px; }
-.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 32px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
 .footer-grid h4 {
   margin-bottom: 14px;
   font-size: 0.72rem;
@@ -383,7 +383,6 @@ tr:last-child td { border-bottom: 0; }
 /* ---------- Tablet ---------- */
 @media (max-width: 1100px) {
   .grid.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nav-list a { font-size: 0.68rem; letter-spacing: 0.1em; }
 }
 
@@ -462,3 +461,84 @@ tr:last-child td { border-bottom: 0; }
 .section.light .fact span { color: #35607c; }
 
 [id] { scroll-margin-top: 92px; }
+
+/* Home hero headline: two lines, second line is "PEARL OF MINDORO" */
+.hero:not(.short) h1 { max-width: none; font-size: clamp(1.45rem, 6.6vw, 5.2rem); }
+.hero h1 span { display: block; white-space: nowrap; }
+
+.footer-base a { color: var(--cyan); }
+
+/* Two line headline with both lines stretched edge to edge */
+.hero h1.lockup { display: inline-block; max-width: none; }
+.hero h1.lockup span { display: block; white-space: nowrap; text-align: justify; text-align-last: justify; }
+
+/* Centered hero text (guide page) */
+.hero.center .wrap { text-align: center; }
+.hero.center h1 { max-width: none; margin-left: auto; margin-right: auto; }
+.hero.center::after { background: linear-gradient(180deg, rgba(3, 23, 41, 0.72) 0%, rgba(6, 40, 74, 0.6) 100%); }
+.hero.center h1 { font-size: clamp(1.45rem, 7.4vw, 4.4rem); }
+
+/* ---------- Animations (CSS only) ---------- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slow-zoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+@keyframes float-in-down { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(111, 216, 230, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(111, 216, 230, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(111, 216, 230, 0); }
+}
+
+/* Hero: slow background zoom and staggered text on page load */
+.hero-bg { animation: slow-zoom 18s ease-out both; }
+.hero .eyebrow { animation: fade-up 0.8s 0.1s ease-out both; }
+.hero h1:not(:has(span)), .hero h1 span { animation: fade-up 0.9s 0.25s ease-out both; }
+.hero h1 span:nth-child(2) { animation-delay: 0.45s; }
+.hero .lead { animation: fade-up 0.9s 0.65s ease-out both; }
+.hero-actions { animation: fade-up 0.9s 0.85s ease-out both; }
+.hero .btn:not(.ghost) { animation: pulse-ring 2.6s 2s infinite; }
+.site-header { animation: float-in-down 0.7s ease-out both; }
+.search-form { animation: fade-up 0.9s 1s ease-out both; }
+
+/* Images zoom gently inside their cards */
+.card { overflow: hidden; }
+.card img { transition: transform 0.6s ease; }
+.card:hover img { transform: scale(1.06); }
+
+/* Buttons and links */
+.btn { transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.btn:hover { box-shadow: 0 10px 24px rgba(111, 216, 230, 0.28); }
+.footer-grid a, .footer-base a { transition: color 0.2s ease; }
+
+/* Tab bar icons lift when active */
+.nav-list a svg { transition: transform 0.25s ease; }
+.nav-list a:hover svg, .nav-list a[aria-current="page"] svg { transform: translateY(-2px) scale(1.08); }
+
+
+/* Scroll reveal: only in browsers that support scroll driven animations */
+@supports (animation-timeline: view()) {
+  .section-head, .card, .fact, .step, .table-wrap, .checklist li, .split > *, .form-card {
+    animation: fade-up linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+  .step:nth-child(2) { animation-range: entry 5% entry 50%; }
+  .step:nth-child(3) { animation-range: entry 10% entry 55%; }
+  .step:nth-child(4) { animation-range: entry 15% entry 60%; }
+}
+
+/* Route line draws in */
+@keyframes draw-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (min-width: 1020px) {
+  .step::after { transform-origin: left center; animation: draw-line 1s 0.3s ease-out both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.lead.wide { max-width: none; }
+.note.small { font-size: 0.74rem; font-style: italic; }
