@@ -744,3 +744,9 @@ img, iframe { max-width: 100%; }
 
 /* A transformed header would trap the fixed tab bar, so no header animation on phones and tablets */
 @media (max-width: 1179px) { .site-header { animation: none; } }
+
+
+/* Contact page: photo fills the space under the about text */
+.about-col { display: flex; flex-direction: column; }
+.about-photo { flex: 1 1 0; width: 100%; min-height: 220px; margin-top: 32px; border-radius: var(--radius); object-fit: cover; }
+@media (max-width: 1019px) { .about-photo { flex: none; height: 260px; } }
