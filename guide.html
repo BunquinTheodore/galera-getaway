@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Galera <span>Getaway</span></a>
@@ -40,7 +41,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">LOGISTICS MAP</p>
-          <h2>Manila to Puerto Galera</h2>
+          <h2><span class="w" style="--i:0">Manila</span> <span class="w" style="--i:1">to</span> <span class="w" style="--i:2">Puerto</span> <span class="w" style="--i:3">Galera</span></h2>
           <p class="lead">Most travelers take a bus to Batangas Pier, then a ferry across to Mindoro.</p>
         </div>
         <ol class="route">
@@ -56,17 +57,18 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">FERRY SCHEDULES AND FARES</p>
-          <h2>Fares at a glance</h2>
+          <h2><span class="w" style="--i:0">Fares</span> <span class="w" style="--i:1">at</span> <span class="w" style="--i:2">a</span> <span class="w" style="--i:3">glance</span></h2>
         </div>
         <div class="table-wrap">
-          <table>
+          <table class="fares">
+            <colgroup><col style="width:32%"><col style="width:23%"><col style="width:24%"><col style="width:21%"></colgroup>
             <thead><tr><th>Leg</th><th>Option</th><th>Approximate fare</th><th>Travel time</th></tr></thead>
             <tbody>
-              <tr><td>Manila to Batangas Pier</td><td>Bus (JAM Transit, DLTB)</td><td>About PHP 200</td><td>2 to 3 hours</td></tr>
-              <tr><td>Batangas to Balatero</td><td>Fast craft</td><td>About PHP 750</td><td>About 1 hour</td></tr>
-              <tr><td>Batangas to Balatero</td><td>RoRo</td><td>About PHP 544</td><td>Over 2 hours</td></tr>
-              <tr><td>Balatero to White Beach</td><td>Tricycle</td><td>About PHP 200 per trip</td><td>10 to 15 minutes</td></tr>
-              <tr><td>Balatero to Sabang</td><td>Tricycle</td><td>From PHP 400 per trip</td><td>20 to 30 minutes</td></tr>
+              <tr><td class="leg">Manila to Batangas Pier</td><td>Bus (JAM Transit, DLTB)</td><td>About PHP 200</td><td>2 to 3 hours</td></tr>
+              <tr><td class="leg" rowspan="2">Batangas to Balatero</td><td>Fast craft</td><td>About PHP 750</td><td>About 1 hour</td></tr>
+              <tr><td>RoRo</td><td>About PHP 544</td><td>Over 2 hours</td></tr>
+              <tr><td class="leg">Balatero to White Beach</td><td>Tricycle</td><td>About PHP 200 per trip</td><td>10 to 15 minutes</td></tr>
+              <tr><td class="leg">Balatero to Sabang</td><td>Tricycle</td><td>From PHP 400 per trip</td><td>20 to 30 minutes</td></tr>
             </tbody>
           </table>
         </div>
@@ -78,22 +80,18 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">IMPORTANT REMINDERS</p>
-          <h2>Fees and requirements</h2>
+          <h2><span class="w" style="--i:0">Fees</span> <span class="w" style="--i:1">and</span> <span class="w" style="--i:2">requirements</span></h2>
         </div>
-        <div class="split">
-          <ul class="checklist">
-            <li><strong>Terminal fees.</strong> About PHP 90 at Batangas Pier and PHP 30 at Balatero.</li>
-            <li><strong>Environmental user's fee (PG Pass).</strong> PHP 120 per visitor, PHP 50 for Mindoro residents. Seniors, PWDs and students over six with valid ID get 20 percent off.</li>
-            <li><strong>Register early.</strong> Pay at the port or register online in advance.</li>
-            <li><strong>Bring valid ID.</strong> Needed to claim fee discounts.</li>
-          </ul>
-          <ul class="checklist">
-            <li><strong>Rainy season.</strong> July to October brings strong winds and waves. Swimming may be unsafe in some months.</li>
-            <li><strong>Cash.</strong> The ATM can run out of cash in peak season. Bring enough pesos.</li>
-            <li><strong>Roads.</strong> Roads are steep and winding. Ride a motorbike only with experience.</li>
-            <li><strong>Local rules.</strong> Follow local government unit requirements for tourists and boat tours.</li>
-          </ul>
-        </div>
+        <ul class="checklist reminders">
+          <li><strong>Terminal fees.</strong> About PHP 90 at Batangas Pier and PHP 30 at Balatero.</li>
+          <li><strong>Rainy season.</strong> July to October brings strong winds and waves. Swimming may be unsafe in some months.</li>
+          <li><strong>Environmental user's fee (PG Pass).</strong> PHP 120 per visitor, PHP 50 for Mindoro residents. Seniors, PWDs and students over six with valid ID get 20 percent off.</li>
+          <li><strong>Cash.</strong> The ATM can run out of cash in peak season. Bring enough pesos.</li>
+          <li><strong>Register early.</strong> Pay at the port or register online in advance.</li>
+          <li><strong>Roads.</strong> Roads are steep and winding. Ride a motorbike only with experience.</li>
+          <li><strong>Bring valid ID.</strong> Needed to claim fee discounts.</li>
+          <li><strong>Local rules.</strong> Follow local government unit requirements for tourists and boat tours.</li>
+        </ul>
       </div>
     </section>
   </main>
@@ -101,21 +99,24 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div>
+        <div class="footer-brand">
           <a class="brand" href="index.html">Galera <span>Getaway</span></a>
-          <p style="margin-top:14px">A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
+          <p>A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
         </div>
         <div>
           <h4>Emergency Contacts</h4>
-          <ul>
-            <li>National Emergency Hotline: 911</li>
-            <li>Tourism Office: <a href="tel:+639209889551">+63 920 988 9551</a></li>
-            <li>Coast Guard (Muelle Pier): <a href="tel:+639177243682">0917 724 3682</a> or <a href="tel:+63432873092">043 287 3092</a></li>
-            <li>Police Station: <a href="tel:+63432873075">043 287 3075</a></li>
-          </ul>
+          <dl class="contacts">
+            <div><dt>Emergency hotline</dt><dd>911</dd></div>
+            <div><dt>Tourism Office</dt><dd><a href="tel:+639209889551">+63 920 988 9551</a></dd></div>
+            <div><dt>Coast Guard, Muelle Pier</dt><dd><a href="tel:+639177243682">0917 724 3682</a></dd></div>
+            <div><dt>Police Station</dt><dd><a href="tel:+63432873075">043 287 3075</a></dd></div>
+          </dl>
         </div>
       </div>
-      <p class="footer-base">Galera Getaway is a school project for CC 100, Batangas State University. Photos and travel facts are acknowledged on the <a href="credits.html">Photo and content credits</a> page.</p>
+      <div class="footer-base">
+        <span>Galera Getaway is a school project for CC 100, Batangas State University.</span>
+        <a href="credits.html">Photo and content credits</a>
+      </div>
     </div>
   </footer>
 </body>

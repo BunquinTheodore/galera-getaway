@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Galera <span>Getaway</span></a>
@@ -56,7 +57,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">FEATURED DESTINATIONS</p>
-          <h2>Top spots to start with</h2>
+          <h2><span class="w" style="--i:0">Top</span> <span class="w" style="--i:1">spots</span> <span class="w" style="--i:2">to</span> <span class="w" style="--i:3">start</span> <span class="w" style="--i:4">with</span></h2>
           <p class="lead wide">Three favorites that show off what Puerto Galera is known for: beach life, diving and waterfalls.</p>
         </div>
         <div class="grid cols-3">
@@ -91,18 +92,37 @@
       </div>
     </section>
 
+    <section class="film" aria-label="Scenes of Puerto Galera">
+      <div class="film-pin">
+        <div class="film-track">
+          <figure class="scene">
+            <img src="images/white-beach-sunset.jpg" alt="Sunset over White Beach">
+            <figcaption><p class="eyebrow">SCENE ONE</p><h2 class="film-title">Golden hour on White Beach</h2><p>Soft white sand, clear water and sunsets, with fire dancers after dark.</p></figcaption>
+          </figure>
+          <figure class="scene">
+            <img src="images/reef.jpg" alt="Coral reef underwater near Puerto Galera">
+            <figcaption><p class="eyebrow">SCENE TWO</p><h2 class="film-title">Under the surface</h2><p>Most dive sites are a short boat ride from Sabang.</p></figcaption>
+          </figure>
+          <figure class="scene">
+            <img src="images/tamaraw-falls.jpg" alt="Tamaraw Falls">
+            <figcaption><p class="eyebrow">SCENE THREE</p><h2 class="film-title">Chasing waterfalls</h2><p>Tamaraw Falls sits along the road toward Calapan.</p></figcaption>
+          </figure>
+        </div>
+        <div class="film-meter" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
     <section class="section light">
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">QUICK FACTS</p>
-          <h2>Know before you go</h2>
+          <h2><span class="w" style="--i:0">Know</span> <span class="w" style="--i:1">before</span> <span class="w" style="--i:2">you</span> <span class="w" style="--i:3">go</span></h2>
         </div>
         <div class="grid cols-3">
           <div class="fact"><strong>About 1 hour</strong><span>Fast ferry from Batangas Pier to Balatero Port</span></div>
           <div class="fact"><strong>PHP 120</strong><span>Environmental user's fee (PG Pass) per visitor, with discounts for some groups</span></div>
           <div class="fact"><strong>July to October</strong><span>Rainy season, with rough seas and typhoon risk</span></div>
         </div>
-        <p class="note">Figures are approximate and come from the Wikivoyage Puerto Galera guide. Always confirm current fares and fees.</p>
       </div>
     </section>
 
@@ -111,7 +131,7 @@
         <div class="split">
           <div>
             <p class="eyebrow">PLAN YOUR TRIP</p>
-            <h2>From Manila to the beach in a day</h2>
+            <h2><span class="w" style="--i:0">From</span> <span class="w" style="--i:1">Manila</span> <span class="w" style="--i:2">to</span> <span class="w" style="--i:3">the</span> <span class="w" style="--i:4">beach</span> <span class="w" style="--i:5">in</span> <span class="w" style="--i:6">a</span> <span class="w" style="--i:7">day</span></h2>
             <p class="lead" style="margin:18px 0 28px">Bus to Batangas Pier, ferry to Balatero, then a short ride to White Beach or Sabang. Our travel guide lists the route, fares and what to bring.</p>
             <a class="btn" href="guide.html">Open Travel Guide</a>
           </div>
@@ -124,21 +144,24 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div>
+        <div class="footer-brand">
           <a class="brand" href="index.html">Galera <span>Getaway</span></a>
-          <p style="margin-top:14px">A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
+          <p>A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
         </div>
         <div>
           <h4>Emergency Contacts</h4>
-          <ul>
-            <li>National Emergency Hotline: 911</li>
-            <li>Tourism Office: <a href="tel:+639209889551">+63 920 988 9551</a></li>
-            <li>Coast Guard (Muelle Pier): <a href="tel:+639177243682">0917 724 3682</a> or <a href="tel:+63432873092">043 287 3092</a></li>
-            <li>Police Station: <a href="tel:+63432873075">043 287 3075</a></li>
-          </ul>
+          <dl class="contacts">
+            <div><dt>Emergency hotline</dt><dd>911</dd></div>
+            <div><dt>Tourism Office</dt><dd><a href="tel:+639209889551">+63 920 988 9551</a></dd></div>
+            <div><dt>Coast Guard, Muelle Pier</dt><dd><a href="tel:+639177243682">0917 724 3682</a></dd></div>
+            <div><dt>Police Station</dt><dd><a href="tel:+63432873075">043 287 3075</a></dd></div>
+          </dl>
         </div>
       </div>
-      <p class="footer-base">Galera Getaway is a school project for CC 100, Batangas State University. Photos and travel facts are acknowledged on the <a href="credits.html">Photo and content credits</a> page.</p>
+      <div class="footer-base">
+        <span>Galera Getaway is a school project for CC 100, Batangas State University.</span>
+        <a href="credits.html">Photo and content credits</a>
+      </div>
     </div>
   </footer>
 </body>

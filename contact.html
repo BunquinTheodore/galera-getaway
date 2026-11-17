@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Galera <span>Getaway</span></a>
@@ -41,9 +42,8 @@
         <div class="split">
           <div>
             <p class="eyebrow">ABOUT THE WEBSITE</p>
-            <h2 style="margin-bottom:18px">Galera Getaway</h2>
+            <h2 style="margin-bottom:18px"><span class="w" style="--i:0">Galera</span> <span class="w" style="--i:1">Getaway</span></h2>
             <p class="lead">Galera Getaway is a travel guide for Puerto Galera, a popular destination in Oriental Mindoro known for its beaches and coral reefs. It collects places to visit, activities with prices, places to stay and the route from Manila in one site.</p>
-            <p class="lead" style="margin-top:14px">This website is a final project for CC 100, Introduction to Computing, at Batangas State University. It is built with HTML and CSS only.</p>
           </div>
           <form class="form-card" action="#" method="post">
             <h3 style="margin-bottom:18px">Booking inquiry</h3>
@@ -55,7 +55,6 @@
               <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" placeholder="Tell us what you would like to book"></textarea></div>
               <div class="full"><button class="btn" type="button">Send Inquiry</button></div>
             </div>
-            <p class="note">This form is for design purposes only and does not send messages.</p>
           </form>
         </div>
       </div>
@@ -66,21 +65,24 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div>
+        <div class="footer-brand">
           <a class="brand" href="index.html">Galera <span>Getaway</span></a>
-          <p style="margin-top:14px">A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
+          <p>A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
         </div>
         <div>
           <h4>Emergency Contacts</h4>
-          <ul>
-            <li>National Emergency Hotline: 911</li>
-            <li>Tourism Office: <a href="tel:+639209889551">+63 920 988 9551</a></li>
-            <li>Coast Guard (Muelle Pier): <a href="tel:+639177243682">0917 724 3682</a> or <a href="tel:+63432873092">043 287 3092</a></li>
-            <li>Police Station: <a href="tel:+63432873075">043 287 3075</a></li>
-          </ul>
+          <dl class="contacts">
+            <div><dt>Emergency hotline</dt><dd>911</dd></div>
+            <div><dt>Tourism Office</dt><dd><a href="tel:+639209889551">+63 920 988 9551</a></dd></div>
+            <div><dt>Coast Guard, Muelle Pier</dt><dd><a href="tel:+639177243682">0917 724 3682</a></dd></div>
+            <div><dt>Police Station</dt><dd><a href="tel:+63432873075">043 287 3075</a></dd></div>
+          </dl>
         </div>
       </div>
-      <p class="footer-base">Galera Getaway is a school project for CC 100, Batangas State University. Photos and travel facts are acknowledged on the <a href="credits.html">Photo and content credits</a> page.</p>
+      <div class="footer-base">
+        <span>Galera Getaway is a school project for CC 100, Batangas State University.</span>
+        <a href="credits.html">Photo and content credits</a>
+      </div>
     </div>
   </footer>
 </body>

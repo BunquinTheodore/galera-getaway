@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Galera <span>Getaway</span></a>
@@ -40,7 +41,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">ACCOMMODATION</p>
-          <h2>Choose by budget and type</h2>
+          <h2><span class="w" style="--i:0">Choose</span> <span class="w" style="--i:1">by</span> <span class="w" style="--i:2">budget</span> <span class="w" style="--i:3">and</span> <span class="w" style="--i:4">type</span></h2>
           <p class="lead wide">Pick a type to filter the list. Rates are starting prices per night and may change by season.</p>
         </div>
         <input class="filter-radio" type="radio" name="tier" id="f-all" aria-label="Show all stays" checked>
@@ -123,7 +124,7 @@
       <div class="wrap">
         <div class="section-head" style="margin-bottom:0">
           <p class="eyebrow">TIP</p>
-          <h2>Book early for peak season</h2>
+          <h2><span class="w" style="--i:0">Book</span> <span class="w" style="--i:1">early</span> <span class="w" style="--i:2">for</span> <span class="w" style="--i:3">peak</span> <span class="w" style="--i:4">season</span></h2>
           <p class="lead" style="margin:18px 0 28px">Weekends and holidays fill up fast. Weekday rates are often lower at White Beach.</p>
           <a class="btn" href="contact.html">Send a Booking Inquiry</a>
         </div>
@@ -134,21 +135,24 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div>
+        <div class="footer-brand">
           <a class="brand" href="index.html">Galera <span>Getaway</span></a>
-          <p style="margin-top:14px">A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
+          <p>A student travel guide to Puerto Galera, Oriental Mindoro. Prices shown are approximate and should be confirmed before you book.</p>
         </div>
         <div>
           <h4>Emergency Contacts</h4>
-          <ul>
-            <li>National Emergency Hotline: 911</li>
-            <li>Tourism Office: <a href="tel:+639209889551">+63 920 988 9551</a></li>
-            <li>Coast Guard (Muelle Pier): <a href="tel:+639177243682">0917 724 3682</a> or <a href="tel:+63432873092">043 287 3092</a></li>
-            <li>Police Station: <a href="tel:+63432873075">043 287 3075</a></li>
-          </ul>
+          <dl class="contacts">
+            <div><dt>Emergency hotline</dt><dd>911</dd></div>
+            <div><dt>Tourism Office</dt><dd><a href="tel:+639209889551">+63 920 988 9551</a></dd></div>
+            <div><dt>Coast Guard, Muelle Pier</dt><dd><a href="tel:+639177243682">0917 724 3682</a></dd></div>
+            <div><dt>Police Station</dt><dd><a href="tel:+63432873075">043 287 3075</a></dd></div>
+          </dl>
         </div>
       </div>
-      <p class="footer-base">Galera Getaway is a school project for CC 100, Batangas State University. Photos and travel facts are acknowledged on the <a href="credits.html">Photo and content credits</a> page.</p>
+      <div class="footer-base">
+        <span>Galera Getaway is a school project for CC 100, Batangas State University.</span>
+        <a href="credits.html">Photo and content credits</a>
+      </div>
     </div>
   </footer>
 </body>
